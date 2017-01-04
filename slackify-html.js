@@ -36,6 +36,9 @@ function walk(dom) {
           case 'em':
             out += '_' + walk(el.children) + '_';
             break;
+          case 'br':
+            out += '\n' + walk(el.children);
+            break;
           default:
             out += walk(el.children);
         }

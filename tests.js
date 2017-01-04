@@ -7,6 +7,11 @@ tap.test('simple', function simple(t) {
   t.end();
 });
 
+tap.test('new line', function newLine(t) {
+  t.equals(slackify('test<br>'), 'test\n');
+  t.end();
+});
+
 tap.test('tags', function tags(t) {
   t.equals(slackify('test <b>bold</b>'), 'test *bold*');
   t.equals(slackify('test <a href="http://example.com">example link</b>'), 'test <http://example.com|example link>');
